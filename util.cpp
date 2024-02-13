@@ -15,17 +15,31 @@ std::string convToLower(std::string src)
     to a set of words based on the criteria given in the assignment **/
 std::set<std::string> parseStringToWords(string rawWords)
 {
+    std::set<std::string> wordList;
+    unsigned int index = 0;
+    std::string word = "";
+    while (index < rawWords.length()) {
+        char c = rawWords[index];
 
+        //if current char is NOT punct then append char
+        if (!(c == ' ' || c == '\'') || ispunct(c) != 0) {
+            word.push_back(c);
+            index++;
+        }
 
-
-
-
-
-
-
-
-
+        //if current char is punct then add to wordList
+        else {
+            if (word.length() >= 2) {
+                wordList.insert(word);
+            }
+            word = "";
+            index++;
+        }
+    }
+    return wordList;
 }
+
+
 
 /**************************************************
  * COMPLETED - You may use the following functions

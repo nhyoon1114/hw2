@@ -24,10 +24,8 @@ Movie::~Movie()
 
 std::set<std::string> Movie::keywords() const
 {
-  set<string> name_set = parseStringToWords(convToLower(getName()));
-  set<string> genre_set = parseStringToWords(convToLower(getGenre()));
-  set<string> keywords = setUnion(name_set, genre_set);
-  keywords.insert(convToLower(getRating()));
+  set<string> keywords = parseStringToWords(convToLower(getName()));
+  keywords.insert(convToLower(getGenre()));
 
   return keywords;
 }

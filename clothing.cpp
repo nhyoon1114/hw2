@@ -27,7 +27,6 @@ std::set<std::string> Clothing::keywords() const
   set<string> name_set = parseStringToWords(convToLower(getName()));
   set<string> brand_set = parseStringToWords(convToLower(getBrand()));
   set<string> keywords = setUnion(name_set, brand_set);
-  keywords.insert(convToLower(getSize()));
 
   return keywords;
 }

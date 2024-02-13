@@ -28,7 +28,6 @@ std::set<std::string> Book::keywords() const
   set<string> author_set = parseStringToWords(convToLower(getAuthor()));
   set<string> keywords = setUnion(name_set, author_set);
   keywords.insert(getISBN());
-  cout << getISBN() << endl;
   return keywords;
 }
 
